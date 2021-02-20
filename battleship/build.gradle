@@ -8,11 +8,11 @@
  */
 
 // Apply the java plugin to add support for Java
-apply plugin: 'java'
-
 plugins {
   id 'com.bmuschko.clover' version '2.2.3'
 }
+
+apply plugin: 'java'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
