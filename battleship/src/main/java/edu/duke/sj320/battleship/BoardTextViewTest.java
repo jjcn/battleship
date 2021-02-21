@@ -112,7 +112,7 @@ public class BoardTextViewTest {
 	@Test
 	public void test_display_enemy_board() {
 		Board<Character> b = new BattleShipBoard<Character>(4, 3, 'X');
-		V2ShipFactory f = new V2ShipFactory();
+		V1ShipFactory f = new V1ShipFactory();
 		Ship<Character> s1 = f.makeSubmarine(new Placement("b0h"));
 		Ship<Character> d1 = f.makeDestroyer(new Placement("a3v"));
 		b.tryAddShip(s1);
@@ -151,7 +151,7 @@ public class BoardTextViewTest {
 	@Test
 	public void test_displayMyBoardWithEnemyNextToIt() {
 		Board<Character> b1 = new BattleShipBoard<Character>(4, 3, 'X');
-		V2ShipFactory f = new V2ShipFactory();
+		V1ShipFactory f = new V1ShipFactory();
 		Ship<Character> s1 = f.makeSubmarine(new Placement("b0h"));
 		Ship<Character> d1 = f.makeDestroyer(new Placement("a3v"));
 		b1.tryAddShip(s1);

@@ -65,13 +65,4 @@ public class Coordinate {
 	public int hashCode() {
 		return toString().hashCode();
 	}
-	
-	/**
-	 * Computes the Manhattan distance between two coordinates.
-	 * @param c2
-	 * @return Manhattan distance
-	 */
-	public int manhattan(Coordinate c2) {
-		return Math.abs(this.getRow() - c2.getRow()) + Math.abs(this.getColumn() - c2.getColumn());
-	}
 }

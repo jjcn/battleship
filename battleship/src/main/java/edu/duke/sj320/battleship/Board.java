@@ -1,7 +1,5 @@
 package edu.duke.sj320.battleship;
 
-import java.util.HashMap;
-
 /**
  * The interface of a board to play "Battleship".
  *
@@ -30,11 +28,7 @@ public interface Board<T> {
   public T whatIsAtForEnemy(Coordinate where);
   
   public Ship<T> fireAt(Coordinate c);
-  
-  public boolean moveShip(Ship<T> s, Placement p);
-  
-  public HashMap<String, Integer> scan(HashMap<String, Integer> stats, Coordinate c);
-  
+
   public boolean checkLose();
 }
 
