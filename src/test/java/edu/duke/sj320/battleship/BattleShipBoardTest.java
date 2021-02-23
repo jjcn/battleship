@@ -117,7 +117,6 @@ public class BattleShipBoardTest {
 		assertEquals(null, b.whatIsAtForEnemy(new Coordinate(4, 4))); // not hit
 	}
 	
-	/*
 	@Test
 	  public void test_invalid_dimensions() {
 	    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(10, 0));
@@ -125,5 +124,5 @@ public class BattleShipBoardTest {
 	    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(10, -5));
 	    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(-8, 20));
 	  }
-	 */
+
 }

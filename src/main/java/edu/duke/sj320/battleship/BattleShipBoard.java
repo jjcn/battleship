@@ -1,7 +1,9 @@
 package edu.duke.sj320.battleship;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.function.Function;
 
 public class BattleShipBoard<T> implements Board<T> {
 	private final int width;
@@ -135,6 +137,52 @@ public class BattleShipBoard<T> implements Board<T> {
 		}
 		enemyMisses.add(c);
 		return null;
+	}
+	
+	/**
+	 * Move the ship to a new position.
+	 * @param c is the Coordinate, which is part of the ship
+	 * @param p is the new placement for ship
+	 * @return true, if the move is valid
+	 *         false, if not
+	 */
+	public boolean moveShip(Ship<T> ship, Placement p) { 
+		// TODO
+		return false;
+	}
+	
+	/**
+	 * Make a search area with a center.
+	 * @param c is the center of search area
+	 * @return the area to search
+	 */
+	private HashSet<Coordinate> makeSearchArea(Coordinate c) {
+		HashSet<Coordinate> ans = new HashSet<>();
+		for (int i = c.getRow() - 3; i <= c.getRow() + 3; i++) {
+			for (int j = c.getColumn() - 3; i <= c.getColumn() + 3; i++) {
+				if (i >= 0 && i < height && j >= 0 && j < width) { // check if in board
+					Coordinate coord = new Coordinate(i, j);
+					if (c.manhattan(coord) < 4) { // check distance
+						ans.add(coord);
+					}
+				}
+			}
+		}
+		return ans;
+	}
+	
+	/**
+	 * Get the corresponding number of squares ships occupy.
+	 * @param stats is the statistics
+	 * @param c is the coordinate to check
+	 * @return a mapping from ship name to the number squares it occupies
+	 */
+	public HashMap<String, Integer> scan(HashMap<String, Integer> stats, Coordinate c) {
+		for (Coordinate toSearch : makeSearchArea(c)) {
+			int count = stats.get(this.getShipAt(toSearch).getName());
+			stats.put(this.getShipAt(toSearch).getName(), count + 1);
+		}
+		return stats;
 	}
 	
 	/**
