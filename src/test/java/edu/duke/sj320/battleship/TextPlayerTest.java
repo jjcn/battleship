@@ -97,7 +97,7 @@ public class TextPlayerTest {
 		BufferedReader input = new BufferedReader(new StringReader(placement_str_v2));
 	    PrintStream output = new PrintStream(System.out, true);
 	    Board<Character> board = new BattleShipBoard<Character>(10, 20, 'X');
-	    V1ShipFactory shipFactory2 = new V1ShipFactory();
+	    V2ShipFactory shipFactory2 = new V2ShipFactory();
 		TextPlayer player3 = new TextPlayer("C", board, input, output, shipFactory2);
 		player3.doPlacementPhase();
 	}
