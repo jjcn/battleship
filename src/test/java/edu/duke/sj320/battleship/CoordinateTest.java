@@ -58,7 +58,6 @@ public class CoordinateTest {
 
 	  }
 		
-	
 	  @Test
 	  public void test_string_constructor_error_cases() {
 	    assertThrows(IllegalArgumentException.class, () -> new Coordinate("00"));
@@ -70,5 +69,27 @@ public class CoordinateTest {
 	    assertThrows(IllegalArgumentException.class, () -> new Coordinate("A"));
 	    assertThrows(IllegalArgumentException.class, () -> new Coordinate("A12"));
 	  }
-	  
+
+	  @Test
+	  public void test_manhattan() {
+		  Coordinate c0 = new Coordinate(0, 0);
+		  Coordinate c1 = new Coordinate(1, 0);
+		  Coordinate c2 = new Coordinate(-1, -4);
+		  Coordinate c3 = new Coordinate(-2, 2);
+		  Coordinate c4 = new Coordinate(2, -5);
+		  assertEquals(1, c0.manhattan(c1));
+		  assertEquals(5, c0.manhattan(c2));
+		  assertEquals(4, c0.manhattan(c3));
+		  assertEquals(7, c0.manhattan(c4));
+
+		  assertEquals(6, c1.manhattan(c2));
+		  assertEquals(5, c1.manhattan(c3));
+		  assertEquals(6, c1.manhattan(c4));
+		  
+		  assertEquals(7, c2.manhattan(c3));
+		  assertEquals(4, c2.manhattan(c4));
+
+		  assertEquals(11, c3.manhattan(c4));
+	  }
+
 }
