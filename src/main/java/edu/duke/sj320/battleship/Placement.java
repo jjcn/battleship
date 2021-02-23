@@ -31,7 +31,7 @@ public class Placement {
 												"and then an orientation (ignore case)");
 		}
 		if (descr.length() == 3) {
-			if (Character.isLetter(descr[0]) == false || Character.isDigit(descr[1]) == false)
+			if (Character.isLetter(descr.charAt(0)) == false || Character.isDigit(descr.charAt(1)) == false)
 			throw new IllegalArgumentException("The placement must be a letter (ignore case) followed by a digit (0-9) " +
 												"and then an orientation (ignore case)");
 		}
