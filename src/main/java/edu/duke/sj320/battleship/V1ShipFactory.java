@@ -9,9 +9,10 @@ public class V1ShipFactory implements AbstractShipFactory<Character> {
 	 * @param h is the height of the ship
 	 * @param letter is the letter indicating the ship
 	 * @param name is the name of the ship
+	 * @throws IllegalArgumentException when the orientation is not supported
 	 * @return
 	 */
-	protected Ship<Character> createShip(Placement where, int w, int h, char letter, String name) {
+	protected Ship<Character> createShip(Placement where, int w, int h, char letter, String name) throws IllegalArgumentException {
 		if (where.orientation == 'V') { // vertical
 			return new RectangleShip<Character>(name, where.getWhere(), w, h, letter, '*');
 		}

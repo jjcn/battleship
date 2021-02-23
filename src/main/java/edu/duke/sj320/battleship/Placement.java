@@ -21,10 +21,17 @@ public class Placement {
 	   * @param descr is the placement string
 	   *
 	   * @throws IllegalArgumentException if the string length is not 3
+	   *								  or first not letter
+	   *								  or second not digit
 	   *                                  does not check orientation letter
 	   */		
-	public Placement(String descr) {
+	public Placement(String descr) throws IllegalArgumentException {
 		if (descr.length() != 3) {
+			throw new IllegalArgumentException("The placement must be a letter (ignore case) followed by a digit (0-9) " +
+												"and then an orientation (ignore case)");
+		}
+		if (descr.length() == 3) {
+			if (Character.isLetter(descr[0]) == false || Character.isDigit(descr[1]) == false)
 			throw new IllegalArgumentException("The placement must be a letter (ignore case) followed by a digit (0-9) " +
 												"and then an orientation (ignore case)");
 		}
