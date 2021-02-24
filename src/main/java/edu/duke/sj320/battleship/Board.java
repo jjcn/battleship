@@ -31,10 +31,6 @@ public interface Board<T> {
   
   public Ship<T> fireAt(Coordinate c);
   
-  public boolean moveShip(Ship<T> s, Placement p);
-  
-  public HashMap<String, Integer> scan(HashMap<String, Integer> stats, Coordinate c);
-  
   public boolean checkLose();
 }
 

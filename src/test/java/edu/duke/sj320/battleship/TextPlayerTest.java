@@ -59,11 +59,6 @@ public class TextPlayerTest {
 			"e0h", "f0v", "h4h", // battleship * 3
 			"k2h", "n9v"); // carrier * 2
 	
-	String placement_str_v2 =  String.join("\n", "B2V", "C8H", //sub * 2
-			"a4v", "a6v", "r0v", // destroyer * 3
-			"e0u", "f0d", "h4l", // battleship * 3
-			"k2r", "n9u"); // carrier * 2
-	
 	@Test
 	public void test_do_placement_phase_A() throws IOException {
 		TextPlayer player1 = createTextPlayer(10, 20, placement_str, System.out);
@@ -90,16 +85,6 @@ public class TextPlayerTest {
 	    V1ShipFactory shipFactory = new V1ShipFactory();
 	    TextPlayer player2 = new TextPlayer("B", board, input, output, shipFactory);
 		player2.doPlacementPhase();
-	}
-	
-	@Test
-	public void test_do_placement_phase_C() throws IOException {
-		BufferedReader input = new BufferedReader(new StringReader(placement_str_v2));
-	    PrintStream output = new PrintStream(System.out, true);
-	    Board<Character> board = new BattleShipBoard<Character>(10, 20, 'X');
-	    V2ShipFactory shipFactory2 = new V2ShipFactory();
-		TextPlayer player3 = new TextPlayer("C", board, input, output, shipFactory2);
-		player3.doPlacementPhase();
 	}
 	
 }
