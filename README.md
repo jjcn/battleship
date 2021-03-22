@@ -36,7 +36,7 @@ Each player has 8 ships:
 3 "Battleships" that are 1x4
 2 "Carriers" that are 1x6
 
-The game then prompts player A for each ship, e.g.,
+The game then prompts player A for each ship, e.g., \\
 Player A where do you want to place a Submarine?
 
 If the location is invalid (collides with another ship, results in a ship going off the grid, etc), 
